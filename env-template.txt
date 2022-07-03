@@ -1,0 +1,2 @@
+REACT_APP_LOGIN_API = "api/login"
+REACT_APP_USERS_API = "api/unknown"
