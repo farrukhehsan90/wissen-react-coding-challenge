@@ -6,8 +6,9 @@
 .home-image{
     align-self: center; 
     text-decoration: underLine;
+    margin-left: 3em;
 }
 .nav-icon{
-    margin-right: 20px; 
+    margin-right: 2em; 
     cursor: pointer; 
 }
