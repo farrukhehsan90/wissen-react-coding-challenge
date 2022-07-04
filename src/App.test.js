@@ -1,25 +1,7 @@
 import { render, fireEvent } from "@testing-library/react";
-import LoginPage from "../src/components/Login";
-import { login } from "./redux/actions/auth";
+import GetUsers from "./components/GetUsers";
 
-// --------------- Test 1 --------------------
-
-// test("Check Login API", () => {
-//   const { container } = render(<LoginPage />);
-//   expect(container.innerHTML).toMatchInlineSnapshot();
-// });
-
-// // ------------ Test 2 -----------
-
-test("Table Values Assignment for Home Page", () => {
-  const data = { one: 1 };
-  data["two"] = 2;
-  expect(data).toEqual({ one: 1, two: 2 });
-});
-
-// // -------------- Test 4 -----------------
-
-test("null", () => {
+test("Check if State is null", () => {
   const n = null;
   expect(n).toBeNull();
   expect(n).toBeDefined();
@@ -28,13 +10,20 @@ test("null", () => {
   expect(n).toBeFalsy();
 });
 
-test("zero", () => {
+test("Check table data legth zero", () => {
   const z = 0;
   expect(z).not.toBeNull();
   expect(z).toBeDefined();
   expect(z).not.toBeUndefined();
   expect(z).not.toBeTruthy();
   expect(z).toBeFalsy();
+});
+
+it("API Testing for Get Table Data", async function () {
+  const component = new GetUsers();
+  const apiResponse = await component.getApi();
+  console.warn(await component.getApi());
+  expect(apiResponse.statusText).toEqual("OK");
 });
 
 //  ----------- Test 8 -------------
